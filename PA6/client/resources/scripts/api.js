@@ -1,9 +1,13 @@
 const cwid = "11926071";
 const baseUrl = "https://pa6-backend.herokuapp.com/api/books/"+cwid;
-var bookList = [];
-var myBook = {};
+var bookList = []; // database gives back an array of books
+var myBook = {}; // always holds on to the book that is selected
 
-function populateList(){
+// do not edit
+// do not edit
+// do not edit
+
+function populateList(){ // makes a call out to the backend, and gets lists of books back
 
     const allBooksApiUrl = baseUrl;
     fetch(allBooksApiUrl).then(function(response){
@@ -15,6 +19,7 @@ function populateList(){
             html += "<option value = " + book.id  + ">" + book.title + "</option>";
         })
         html += "</select>";
+        //updates page
         document.getElementById("listBox").innerHTML = html;
     }).catch(function(error){
         console.log(error);
